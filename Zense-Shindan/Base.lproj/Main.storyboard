@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina5_9" orientation="portrait" appearance="light"/>
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -10,33 +10,36 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Zense_Shindan" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="AI前世診断" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="前世診断" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TQn-ew-BoG">
-                                <rect key="frame" x="15" y="194" width="345" height="60"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AI 前世診断" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TQn-ew-BoG">
+                                <rect key="frame" x="15" y="150" width="345" height="60"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iCN-Du-qjw">
-                                <rect key="frame" x="100" y="354" width="175" height="30"/>
+                                <rect key="frame" x="100" y="310" width="175" height="30"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="前世を占う">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="2SZ-XA-8oN" kind="presentation" id="cPV-4z-kc4"/>
+                                    <action selector="zenseStart:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kO5-Lp-F2K"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Nj-qc-OEC">
-                                <rect key="frame" x="100" y="434" width="175" height="30"/>
+                                <rect key="frame" x="100" y="390" width="175" height="30"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="来世を占う">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="raiseStart:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GO2-4G-5mi"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -53,26 +56,106 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <segue destination="xiL-2j-vAy" kind="presentation" identifier="toZenseShindan" modalPresentationStyle="fullScreen" id="Bmg-0u-KSj"/>
+                        <segue destination="xiL-2j-vAy" kind="presentation" identifier="toRaiseShindan" modalPresentationStyle="fullScreen" id="3QK-nI-M5d"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-57.971014492753625" y="112.5"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="cXh-OJ-0zx">
+        <!--Shindan View Controller-->
+        <scene sceneID="wGH-1T-Yvh">
             <objects>
-                <viewController id="2SZ-XA-8oN" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="W2a-BK-AaU">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
+                <viewController id="xiL-2j-vAy" customClass="ShindanViewController" customModule="AI前世診断" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Dy0-SW-Exs">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mKY-S8-qIZ">
+                                <rect key="frame" x="97" y="133" width="0.0" height="0.0"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="45"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fc1-fT-5K3">
+                                <rect key="frame" x="30" y="50" width="315" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Bs-BQ-5qN">
+                                <rect key="frame" x="157" y="97" width="0.0" height="0.0"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="60"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6TN-Bd-CQ1">
+                                <rect key="frame" x="50" y="611" width="275" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="ホーム"/>
+                                <connections>
+                                    <action selector="backButton:" destination="xiL-2j-vAy" eventType="touchUpInside" id="hY9-jm-uL2"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w2B-Po-vWL">
+                                <rect key="frame" x="30" y="555" width="315" height="36"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="写真を選んで診断開始">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="pictureButton:" destination="xiL-2j-vAy" eventType="touchUpInside" id="sB5-9R-nus"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="C5Z-xu-OC2">
+                                <rect key="frame" x="50" y="184" width="275" height="341"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Result" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cHr-q0-m68">
+                                <rect key="frame" x="30" y="116" width="315" height="48"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="4Rc-a4-6pJ"/>
+                        <constraints>
+                            <constraint firstItem="6TN-Bd-CQ1" firstAttribute="leading" secondItem="36p-wp-lK7" secondAttribute="leading" constant="50" id="0AC-hL-99k"/>
+                            <constraint firstItem="cHr-q0-m68" firstAttribute="leading" secondItem="36p-wp-lK7" secondAttribute="leading" constant="30" id="6h4-zc-axD"/>
+                            <constraint firstItem="w2B-Po-vWL" firstAttribute="top" secondItem="C5Z-xu-OC2" secondAttribute="bottom" constant="30" id="B7y-0S-Jxs"/>
+                            <constraint firstItem="C5Z-xu-OC2" firstAttribute="top" secondItem="cHr-q0-m68" secondAttribute="bottom" constant="20" id="BaH-5C-ExW"/>
+                            <constraint firstItem="cHr-q0-m68" firstAttribute="top" secondItem="Fc1-fT-5K3" secondAttribute="bottom" constant="30" id="CbI-0x-mzX"/>
+                            <constraint firstItem="36p-wp-lK7" firstAttribute="trailing" secondItem="w2B-Po-vWL" secondAttribute="trailing" constant="30" id="DKO-Om-Ahu"/>
+                            <constraint firstItem="w2B-Po-vWL" firstAttribute="leading" secondItem="36p-wp-lK7" secondAttribute="leading" constant="30" id="DQh-EL-Ng5"/>
+                            <constraint firstItem="C5Z-xu-OC2" firstAttribute="leading" secondItem="36p-wp-lK7" secondAttribute="leading" constant="50" id="MTg-1K-1g6"/>
+                            <constraint firstItem="36p-wp-lK7" firstAttribute="bottom" secondItem="6TN-Bd-CQ1" secondAttribute="bottom" constant="20" id="ezr-jW-Rad"/>
+                            <constraint firstItem="36p-wp-lK7" firstAttribute="trailing" secondItem="cHr-q0-m68" secondAttribute="trailing" constant="30" id="fK9-5G-IvG"/>
+                            <constraint firstItem="36p-wp-lK7" firstAttribute="trailing" secondItem="C5Z-xu-OC2" secondAttribute="trailing" constant="50" id="gqF-d6-8qQ"/>
+                            <constraint firstItem="Fc1-fT-5K3" firstAttribute="leading" secondItem="36p-wp-lK7" secondAttribute="leading" constant="30" id="mnn-uT-fR9"/>
+                            <constraint firstItem="Fc1-fT-5K3" firstAttribute="top" secondItem="36p-wp-lK7" secondAttribute="top" constant="50" id="o7I-0S-iMa"/>
+                            <constraint firstItem="6TN-Bd-CQ1" firstAttribute="top" secondItem="w2B-Po-vWL" secondAttribute="bottom" constant="20" id="pil-Mw-r3A"/>
+                            <constraint firstItem="36p-wp-lK7" firstAttribute="trailing" secondItem="Fc1-fT-5K3" secondAttribute="trailing" constant="30" id="uYs-Mx-Odd"/>
+                            <constraint firstItem="36p-wp-lK7" firstAttribute="trailing" secondItem="6TN-Bd-CQ1" secondAttribute="trailing" constant="50" id="wWG-sq-veX"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="36p-wp-lK7"/>
                     </view>
-                    <navigationItem key="navigationItem" id="HBq-e9-jaH"/>
+                    <navigationItem key="navigationItem" id="ylb-WX-9jI"/>
+                    <connections>
+                        <outlet property="result" destination="cHr-q0-m68" id="iSb-WF-ifm"/>
+                        <outlet property="resultImage" destination="C5Z-xu-OC2" id="58X-RY-Xq4"/>
+                        <outlet property="shindanTitle" destination="Fc1-fT-5K3" id="HLN-TL-DL9"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Q3L-Ul-Qbk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7eW-R4-uP8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="865" y="-69"/>
+            <point key="canvasLocation" x="770" y="112"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="Bmg-0u-KSj"/>
+    </inferredMetricsTieBreakers>
 </document>

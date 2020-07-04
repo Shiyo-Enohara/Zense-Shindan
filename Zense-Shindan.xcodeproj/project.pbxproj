@@ -14,6 +14,7 @@
 		0132797C24A0D7A900CCCE3E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0132797B24A0D7A900CCCE3E /* Assets.xcassets */; };
 		0132797F24A0D7A900CCCE3E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0132797D24A0D7A900CCCE3E /* LaunchScreen.storyboard */; };
 		0132798A24A0D7A900CCCE3E /* Zense_ShindanTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0132798924A0D7A900CCCE3E /* Zense_ShindanTests.swift */; };
+		01B3616624B0CAD7000A61ED /* ShindanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B3616524B0CAD7000A61ED /* ShindanViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,7 +28,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0132796F24A0D7A800CCCE3E /* Zense-Shindan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Zense-Shindan.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0132796F24A0D7A800CCCE3E /* AI前世診断.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AI前世診断.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0132797224A0D7A800CCCE3E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0132797424A0D7A800CCCE3E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		0132797624A0D7A800CCCE3E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -38,6 +39,7 @@
 		0132798524A0D7A900CCCE3E /* Zense-ShindanTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Zense-ShindanTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0132798924A0D7A900CCCE3E /* Zense_ShindanTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Zense_ShindanTests.swift; sourceTree = "<group>"; };
 		0132798B24A0D7A900CCCE3E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		01B3616524B0CAD7000A61ED /* ShindanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShindanViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,7 +72,7 @@
 		0132797024A0D7A800CCCE3E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				0132796F24A0D7A800CCCE3E /* Zense-Shindan.app */,
+				0132796F24A0D7A800CCCE3E /* AI前世診断.app */,
 				0132798524A0D7A900CCCE3E /* Zense-ShindanTests.xctest */,
 			);
 			name = Products;
@@ -83,6 +85,7 @@
 				0132797424A0D7A800CCCE3E /* SceneDelegate.swift */,
 				0132797624A0D7A800CCCE3E /* ViewController.swift */,
 				0132797824A0D7A800CCCE3E /* Main.storyboard */,
+				01B3616524B0CAD7000A61ED /* ShindanViewController.swift */,
 				0132797B24A0D7A900CCCE3E /* Assets.xcassets */,
 				0132797D24A0D7A900CCCE3E /* LaunchScreen.storyboard */,
 				0132798024A0D7A900CCCE3E /* Info.plist */,
@@ -116,7 +119,7 @@
 			);
 			name = "Zense-Shindan";
 			productName = "Zense-Shindan";
-			productReference = 0132796F24A0D7A800CCCE3E /* Zense-Shindan.app */;
+			productReference = 0132796F24A0D7A800CCCE3E /* AI前世診断.app */;
 			productType = "com.apple.product-type.application";
 		};
 		0132798424A0D7A900CCCE3E /* Zense-ShindanTests */ = {
@@ -202,6 +205,7 @@
 			files = (
 				0132797724A0D7A800CCCE3E /* ViewController.swift in Sources */,
 				0132797324A0D7A800CCCE3E /* AppDelegate.swift in Sources */,
+				01B3616624B0CAD7000A61ED /* ShindanViewController.swift in Sources */,
 				0132797524A0D7A800CCCE3E /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -365,12 +369,13 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 32JS2LW7B8;
 				INFOPLIST_FILE = "Zense-Shindan/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "jp.enohara.Zense-Shindan";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "AI前世診断";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -383,12 +388,13 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 32JS2LW7B8;
 				INFOPLIST_FILE = "Zense-Shindan/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "jp.enohara.Zense-Shindan";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "AI前世診断";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
