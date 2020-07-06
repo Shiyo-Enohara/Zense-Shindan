@@ -19,4 +19,4 @@ https://github.com/enoharas/Zense-Shindan-iOS-.git
 
 6.タスクバーの左のRunボタン（三角形）をクリック
 
-7.
+うまく行かなかったら、「上のツールバー>Xcode>preference>>Accounts」で自分のApple ID追加してからリトライ
